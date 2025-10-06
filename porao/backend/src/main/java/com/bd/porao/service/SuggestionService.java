@@ -57,9 +57,9 @@ public class SuggestionService
             var vec = embeddings.embed(tText);
             var score = Vectors.cosine(reqVec, vec);
             double dist = 0;
-            if(lat != null && lng != null && tp.getLat() != null && tp.getLong()!=null)
+            if(lat != null && lng != null && tp.getLat() != null && tp.getLng()!=null)
             {
-                dist = haversineKm(lat,lng, tp.getLat(),tp.getLong());
+                dist = haversineKm(lat,lng, tp.getLat(),tp.getLng());
             }
             var result = new HashMap<String,Object>();
             result.put("id", tp.getId());
@@ -71,7 +71,7 @@ public class SuggestionService
             result.put("score", score);
             result.put("distanceKm", dist);
 
-            if (includeExplanations && score > 0.5)
+            if (includeExplain && score > 0.5)
             {
                 String explanation = openAI.explainMatch(
                         reqs,

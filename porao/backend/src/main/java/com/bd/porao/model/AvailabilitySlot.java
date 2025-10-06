@@ -21,4 +21,44 @@ public class AvailabilitySlot
     private Instant startUtc;
     private Instant endUtc;
     private boolean recurringWeekly = false;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(User tutor) {
+        this.tutor = tutor;
+    }
+
+    public Instant getStartUtc() {
+        return startUtc;
+    }
+
+    public void setStartUtc(Instant startUtc) {
+        this.startUtc = startUtc;
+    }
+
+    public Instant getEndUtc() {
+        return endUtc;
+    }
+
+    public void setEndUtc(Instant endUtc) {
+        this.endUtc = endUtc;
+    }
+
+    public boolean isRecurringWeekly() {
+        return recurringWeekly;
+    }
+
+    public void setRecurringWeekly(boolean recurringWeekly) {
+        this.recurringWeekly = recurringWeekly;
+    }
 }

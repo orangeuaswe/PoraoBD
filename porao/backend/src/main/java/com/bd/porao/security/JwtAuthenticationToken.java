@@ -13,7 +13,7 @@ public class JwtAuthenticationToken extends AbstractAuthenticationToken
 
     public JwtAuthenticationToken(Claims claims)
     {
-        super();
+        super(getAuthorities(claims));
         this.claims = claims;
         setAuthenticated(true);
     }
